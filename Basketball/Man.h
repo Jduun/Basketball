@@ -11,8 +11,6 @@ public:
 	void Draw(sf::RenderWindow* window) override;
 	void Update(sf::RenderWindow* window) override;
 	void setBall(Ball* _ball);
-	void Pass(double _x, double _y, Ball* _ball);
-	bool Pass(Man* man, Ball* _ball);
 	Ball* getBall();
 	
 private:

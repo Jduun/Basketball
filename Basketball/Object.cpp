@@ -2,7 +2,6 @@
 
 Object::Object(double x, double y, sf::Color color) : x(x), y(y), color(color) {}
 
-
 double Object::getX()
 {
 	return x;

@@ -20,3 +20,22 @@ void Ball::setPosition(double _x, double _y)
 	x = _x;
 	y = _y;
 }
+
+bool Ball::Pass(double _x, double _y)
+{
+	if (pow(x - _x, 2) + pow(y - _y, 2) <= 100)
+	{
+		return true;
+	}
+	const double V = 10;
+	double vx = _x - x;
+	double vy = _y - y;
+	double vLength = pow(vx * vx + vy * vy, 0.5);
+	vx *= V;
+	vy *= V;
+	vx /= vLength;
+	vy /= vLength;
+	x += vx;
+	y += vy;
+	return false;
+}

@@ -8,6 +8,8 @@ public:
 	void Draw(sf::RenderWindow* window) override;
 	void Update(sf::RenderWindow* window) override;
 	void setPosition(double _x, double _y);
+	//bool Pass(Man* man1, Man* man2);
+	bool Pass(double _x, double _y);
 
 private:
 	double radius;
