@@ -4,7 +4,7 @@ Game::Game()
 {
 	srand(time(nullptr));
 	window = new sf::RenderWindow(sf::VideoMode(WIDTH, HEIGHT), "Basketball");
-	window->setFramerateLimit(60);
+	window->setFramerateLimit(45);
 	objects.push_back(new Basket(20, HEIGHT / 2 - 20, sf::Color(100, 0, 0), 20, 5));
 	objects.push_back(new Basket(WIDTH - 20 * 2 - 20, HEIGHT / 2 - 20, sf::Color(100, 0, 0), 20, 5));
 	objects.push_back(new Ball(WIDTH / 2 - 5, HEIGHT / 2 - 5, sf::Color(180, 50, 0), 5));
@@ -27,6 +27,10 @@ Game::Game()
 Game::~Game()
 {
 	delete window;
+	for (int i = 0; i < objects.size(); i++)
+	{
+		delete objects[i];
+	}
 }
 
 void Game::Draw()
